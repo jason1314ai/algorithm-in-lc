@@ -14,3 +14,7 @@ start + (end - start) / 2
 A[mid] ==, <, >
 A[start] A[end] ? target
 ```
+
+
+## 题目类型
+（1）关于Rotated Array
