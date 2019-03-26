@@ -7,7 +7,7 @@ Find the minimum element.
 */
 
 
-// for both
+// no duplicate
 public class Solution {
     /**
      * @param nums: a rotated sorted array
