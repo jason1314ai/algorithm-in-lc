@@ -1,3 +1,5 @@
+# [algorithm pattern](https://docs.google.com/document/d/1WdVt9XonqXygB3B9e3bDDegubE6K_5yWMCbc85M7g8I/edit?usp=sharing)
+
 # java-leetcode
 ## 时间复杂度计算
 ```
