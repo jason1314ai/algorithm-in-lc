@@ -8,6 +8,8 @@
  * }
  */
  
+ import java.util.*;
+ 
  // 左边是小于n组成的， 右边是大于n组成的，分治的思想
 class Solution {
     public List<TreeNode> generateTrees(int n) {
