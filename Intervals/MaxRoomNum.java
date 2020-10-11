@@ -1,4 +1,10 @@
 /**
+ * LC 252 & LC 253 : https://leetcode.com/problems/meeting-rooms-ii/
+ * Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei)
+ * find the minimum number of conference rooms required.
+*/
+
+/**
  * 三种方法：
  *（1） 因为最多的时间点一定是某个起始点，所以可以用扫描线扫描所有起始点 
  *（2） 末尾点可以用minheap(priorityqueue)进行优化
@@ -68,6 +74,22 @@ class MaxRoomNum {
             }
         }
         return max;
+    }
+
+    // Check whether need extra meeting room
+    public boolean canAttendMeetings(int[][] intervals) {
+        Comparator<int[]> myCom = new Comparator<int[]>(){
+            @Override
+            public int compare(int[] a, int[] b){
+                return a[0] - b[0];
+            }
+        };
+        Arrays.sort(intervals,myCom);
+        for(int i = 0;i<intervals.length-1;i++){
+            if(intervals[i][1] > intervals[i+1][0])
+                return false;
+        }
+        return true;
     }
 
 }
