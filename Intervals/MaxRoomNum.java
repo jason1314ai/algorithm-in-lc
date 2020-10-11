@@ -12,6 +12,7 @@ import java.util.*;
 class MaxRoomNum {
 
     // Brute force
+    // Time: o(n^2) Space: o(1)
     public int minMeetingRooms1(int[][] intervals) {
         Arrays.sort(intervals,(a,b)->a[0]-b[0]);
         int max = 0;
@@ -28,6 +29,7 @@ class MaxRoomNum {
     }
 
     // MinHeap
+    // Time: o(nlogn) Space: o(n)
     public int minMeetingRooms2(int[][] intervals) {
         Arrays.sort(intervals,(a,b)->a[0]-b[0]);
         int max = 0;
@@ -35,16 +37,17 @@ class MaxRoomNum {
         
         for(int i = 0;i<intervals.length;i++){
             int time = intervals[i][0];
-            queue.offer(intervals[i][1]);
+            queue.offer(intervals[i][1]); // o(logn)
             while(!queue.isEmpty() && queue.peek() <= time){  // 如果end小于等于time，该interval结束
-                queue.poll();
+                queue.poll(); //average time cost o(1) 
             }
-            max = Math.max(queue.size(),max);
+            max = Math.max(queue.size(),max); 
         }
         return max;
     }
 
     // Two Pointers
+    // Time: o(nlogn + n) Space: o(n)
     public int minMeetingRooms3(int[][] intervals) {
         int[] start = new int[intervals.length];
         int[] end = new int[intervals.length];

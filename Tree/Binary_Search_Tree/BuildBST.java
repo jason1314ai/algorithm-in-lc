@@ -11,7 +11,7 @@
  import java.util.*;
  
  // 左边是小于n组成的， 右边是大于n组成的，分治的思想
-class Solution {
+class BuildBST {
     public List<TreeNode> generateTrees(int n) {
         List<TreeNode> ls =new ArrayList<>();
         if(n < 1)
