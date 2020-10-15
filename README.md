@@ -1,7 +1,7 @@
 # [algorithm pattern](https://docs.google.com/document/d/1WdVt9XonqXygB3B9e3bDDegubE6K_5yWMCbc85M7g8I/edit?usp=sharing)
 
 # java-leetcode
-## 时间复杂度计算
+## Time Complexity Computation
 ```
 T(n) = aT(n/b) + f(n) 【a >= 1; b>=1, f(n)为positive function】
 
@@ -15,7 +15,7 @@ if f(n) = O(n^logb a +e)  T(n) = O(f(n))
 (3) T(n) = 2*T(n/2) + O(n) T(n) = O(n*logn) 【mergesort quicksort】
 ```
 
-## 通过时间复杂度推测算法
+## Time Complexity <-> Algorithm
 ```
 O(logn) : 二分法
 O(n^1/2): 分解质因数
