@@ -7,6 +7,21 @@
  * 
 */
 
+/**
+ * 思路： 类似calculatorI 
+ * 先去除 * / () 
+ * 然后在iterate stack 求解
+ * 
+ * -----------------------------------------------------
+ * summary:
+ * a. 如果只有 + -： 顺着计算
+ * b. 如果加上乘除： 先算乘除，最后计算a -> int stack
+ * c. 如果有括号，双stack遇到记录( 和 + - -> char stack 
+ * 
+*/
+
+import java.util.*;
+
 public class CalculatorIII {
     public int calculateWithTwoStacks(String s) {
         Stack<Integer> nums = new Stack<>();

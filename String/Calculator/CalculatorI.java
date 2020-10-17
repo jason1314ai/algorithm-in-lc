@@ -116,7 +116,7 @@ public class CalculatorI{
                         break;
                     index++;
                 }
-                int num = calculate(s.substring(start+1,index));
+                int num = calculateWithRecursion(s.substring(start+1,index));
                 if(sign  == '-'){
                     ans -= num;
                 }else{
