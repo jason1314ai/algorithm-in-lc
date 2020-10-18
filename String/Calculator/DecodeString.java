@@ -16,7 +16,7 @@
 import java.util.*;
 
 public class DecodeString { 
-    public String decodeString(String s) {
+    public String decodeStringWishStack(String s) {
         Stack<Integer> nums = new Stack<>();
         Stack<String> strings = new Stack<>();
         int index = 0;
@@ -65,5 +65,45 @@ public class DecodeString {
             }
         }
         return ans;
-    }       
+    }
+
+    public String decodeStringWithRecursion(String s) {
+        int num = 1;
+        int index = 0;
+        StringBuilder sb = new StringBuilder();
+        while(index < s.length()){
+            char c =  s.charAt(index);
+            if(Character.isLetter(c)){
+                for(int i = 0;i<num;i++){
+                    sb.append(c);   
+                }
+                num = 1;
+                index++;
+            }else if(Character.isDigit(c)){
+                num  = 0;
+                while(Character.isDigit(s.charAt(index))){
+                    num = num * 10 + (s.charAt(index) - '0');
+                    index++;
+                }
+            }else if(c == '['){
+                int start = ++index;
+                int count = 1;
+                while(count != 0){
+                    if(s.charAt(index) == '[')
+                        count++;
+                    else if(s.charAt(index) == ']')
+                        count--;
+                    index++;
+                }
+                String subOfS = decodeStringWithRecursion(s.substring(start,index-1));
+                for(int i = 0;i<num;i++){
+                    sb.append(subOfS);
+                }
+                num = 1;
+            }else{
+                break;
+            }
+        }
+        return sb.toString();
+    }
 }
